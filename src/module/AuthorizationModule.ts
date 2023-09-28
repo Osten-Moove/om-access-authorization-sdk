@@ -1,5 +1,7 @@
-import { DynamicModule, Module } from '@nestjs/common'
+import { DynamicModule, Global, Module } from '@nestjs/common'
+import { APP_GUARD } from '@nestjs/core'
 import { DataSource, DataSourceOptions } from 'typeorm'
+import { AuthorizationGuard } from '../decorators/Authorization'
 import { AuthorizationEntity } from '../entities/AuthorizationEntity'
 import { GroupEntity } from '../entities/GroupEntity'
 import { GroupPolicyEntity } from '../entities/GroupPolicyEntity'
@@ -8,6 +10,8 @@ import { PermissionEntity } from '../entities/PermissionEntity'
 import { PolicyEntity } from '../entities/PolicyEntity'
 import { PolicyPermissionEntity } from '../entities/PolicyPermissionEntity'
 import { AuthorizationLibDefaultOwner } from '../helpers/AuthorizationLibVariables'
+import { AuthorizationManagerService } from '../services/AuthorizationManagerService'
+import { AuthorizationService } from '../services/AuthorizationService'
 import { ControlService } from '../services/ControlService'
 import { GroupPolicyService } from '../services/GroupPolicyService'
 import { GroupService } from '../services/GroupService'
@@ -16,11 +20,15 @@ import { PermissionService } from '../services/PermissionService'
 import { PolicyPermissionService } from '../services/PolicyPermissionService'
 import { PolicyService } from '../services/PolicyService'
 import { UserService } from '../services/UserService'
+import { DecoratorConfig } from '../types'
 
+@Global()
 @Module({})
 export class AuthorizationModule {
   static connection: DataSource
-  static forRoot(database: DataSourceOptions): DynamicModule {
+  static decoratorConfig: DecoratorConfig
+  static forRoot(database: DataSourceOptions, decoratorConfig: DecoratorConfig): DynamicModule {
+    this.decoratorConfig = decoratorConfig
     const entities = [
       PermissionEntity,
       PolicyPermissionEntity,
@@ -40,6 +48,8 @@ export class AuthorizationModule {
       PolicyService,
       ControlService,
       UserService,
+      AuthorizationService,
+      AuthorizationManagerService,
     ]
 
     this.connection = new DataSource({
@@ -52,7 +62,13 @@ export class AuthorizationModule {
       global: true,
       module: AuthorizationModule,
       imports: [],
-      providers: services,
+      providers: [
+        ...services,
+        {
+          provide: APP_GUARD,
+          useClass: AuthorizationGuard,
+        },
+      ],
       exports: services,
     }
   }

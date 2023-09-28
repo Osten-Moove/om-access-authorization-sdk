@@ -15,8 +15,15 @@ export type FilteredAllowedResourcesDTO<T> = {
 }
 
 export type AuthorizationPayloadDTO = {
-  authorizationPayloadDTO: AuthorizationEntity[]
+  authorizationPayloadDTO: {
+    entities: AuthorizationEntity[]
+    permissions: Set<string>
+  }
 }
 
 export type ValidArgs = 'apply' | 'refresh' | 'config'
 export type typeArgs = { [k in ValidArgs]?: string }
+
+export type DecoratorConfig = {
+  getIdOfUserByRequest: (request: any) => string
+}
