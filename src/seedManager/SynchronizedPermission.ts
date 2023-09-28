@@ -5,7 +5,7 @@ import { PermissionEntity } from '../entities/PermissionEntity'
 import { compareArrays } from '../seedManager/ArrayObjectFunction'
 import { readFile, writeFile } from '../seedManager/Files'
 import { LoggerDetails } from '../seedManager/Logger'
-import { SeedPermissionsType } from '../types/types'
+import { SeedPermissionsType } from '../types'
 
 export async function synchronizedPermission(
   db: EntityManager,

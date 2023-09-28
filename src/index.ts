@@ -1,5 +1,7 @@
 export * from './entities'
 export * as Entities from './entities'
+export { AuthorizationLibDefaultOwner } from './helpers/AuthorizationLibVariables'
 export { AuthorizationModule } from './module/AuthorizationModule'
 export { SeedRun } from './seedManager'
 export { ControlService } from './services/ControlService'
+export { AuthorizationEntityToString, StringToAuthorizationEntity } from './utils/AuthorizationUtils'

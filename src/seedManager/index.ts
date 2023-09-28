@@ -5,7 +5,7 @@ import { synchronizedAuthorizations } from '../seedManager/SynchronizedAuthoriza
 import { synchronizedGroup } from '../seedManager/SynchronizedGroup'
 import { synchronizedPermission } from '../seedManager/SynchronizedPermission'
 import { synchronizedPolicy } from '../seedManager/SynchronizedPolicy'
-import { DefaultConfiguration, typeArgs } from '../types/types'
+import { DefaultConfiguration, typeArgs } from '../types'
 import { createDirectory } from './Files'
 
 export async function SeedRun(config: DefaultConfiguration, args?: typeArgs) {

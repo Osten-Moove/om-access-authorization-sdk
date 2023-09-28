@@ -8,7 +8,7 @@ import { AuthorizationLibDefaultOwner } from '../helpers/AuthorizationLibVariabl
 import { compareArrays } from '../seedManager/ArrayObjectFunction'
 import { generatePlanFile, readFile, writeFile } from '../seedManager/Files'
 import { LoggerDetails } from '../seedManager/Logger'
-import { SeedPolicies } from '../types/types'
+import { SeedPolicies } from '../types'
 
 export async function synchronizedPolicy(
   db: EntityManager,

@@ -1,4 +1,4 @@
-import { DataSourceOptions } from 'typeorm'
+import { AuthorizationEntity } from '../entities'
 
 export type PermissionResourceDTO = {
   permission: string
@@ -12,6 +12,10 @@ export type PermissionResourceAuthorizationDTO = PermissionResourceDTO & {
 export type FilteredAllowedResourcesDTO<T> = {
   allowed: T[]
   refused: T[]
+}
+
+export type AuthorizationPayloadDTO = {
+  authorizationPayloadDTO: AuthorizationEntity[]
 }
 
 export type ValidArgs = 'apply' | 'refresh' | 'config'

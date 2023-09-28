@@ -6,7 +6,7 @@ import { PermissionEntity } from '../src/entities/PermissionEntity'
 import { PolicyEntity } from '../src/entities/PolicyEntity'
 import { PolicyPermissionEntity } from '../src/entities/PolicyPermissionEntity'
 import { SeedRun } from '../src/seedManager'
-import { SeedGroups, SeedPermissionsType, SeedPolicies } from '../src/utils/types'
+import { SeedGroups, SeedPermissionsType, SeedPolicies } from '../src/types'
 
 const Permissions: SeedPermissionsType = {
   PERMISSION_LIST: ['authorization:permission:/:get'],

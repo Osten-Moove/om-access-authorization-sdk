@@ -9,7 +9,7 @@ import { AuthorizationLibDefaultOwner } from '../helpers/AuthorizationLibVariabl
 import { compareArrays } from '../seedManager/ArrayObjectFunction'
 import { generatePlanFile, readFile, writeFile } from '../seedManager/Files'
 import { LoggerDetails } from '../seedManager/Logger'
-import { SeedGroups } from '../types/types'
+import { SeedGroups } from '../types'
 
 export async function synchronizedGroup(
   db: EntityManager,
