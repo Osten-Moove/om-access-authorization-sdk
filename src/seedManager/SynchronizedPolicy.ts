@@ -54,10 +54,10 @@ export async function synchronizedPolicy(
     c.some(
       (itt) =>
         it.policyId === itt.policyId &&
-        it.microservice === itt.microservice &&
-        it.controller === itt.controller &&
-        it.router === itt.router &&
-        it.method === itt.method,
+        it.p1 === itt.p1 &&
+        it.p2 === itt.p2 &&
+        it.p3 === itt.p3 &&
+        it.p4 === itt.p4,
     ),
   )
   LoggerDetails(

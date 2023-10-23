@@ -11,17 +11,17 @@ export class AuthorizationEntity {
   @PrimaryColumn({ type: 'uuid', name: 'policy_id' })
   policyId: string
 
-  @PrimaryColumn({ type: 'character varying', name: 'microservice' })
-  microservice: string
+  @PrimaryColumn({ type: 'character varying', name: 'p1' })
+  p1: string
 
-  @PrimaryColumn({ type: 'character varying', name: 'controller' })
-  controller: string
+  @PrimaryColumn({ type: 'character varying', name: 'p2' })
+  p2: string
 
-  @PrimaryColumn({ type: 'character varying', name: 'router' })
-  router: string
+  @PrimaryColumn({ type: 'character varying', name: 'p3' })
+  p3: string
 
-  @PrimaryColumn({ type: 'character varying', name: 'method' })
-  method: 'get' | 'post' | 'put' | 'delete' | 'patch' | 'all' | 'options' | 'head' | string
+  @PrimaryColumn({ type: 'character varying', name: 'p4' })
+  p4: string
 
   @Column({ type: 'text' })
   resource: string

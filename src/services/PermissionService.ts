@@ -66,58 +66,58 @@ export class PermissionService extends DefaultService<PermissionEntity> {
   }
 
   /**
-   * Retrieve a grouped list based on the 'microservice' column with counts.
+   * Retrieve a grouped list based on the 'p1' column with counts.
    *
-   * This function retrieves a list of items from the database and groups them based on the 'microservice' column.
+   * This function retrieves a list of items from the database and groups them based on the 'p1' column.
    * It also provides a count of items in each group.
    *
    */
-  getMicroservices = (
+  getP1 = (
     filters: FindOptionsWhere<PermissionEntity>[] | FindOptionsWhere<PermissionEntity>,
     sortBy: FindOptionsOrder<PermissionEntity>,
     page = 0,
     pageSize = 20,
-  ) => this.getByKey(['microservice'], filters, sortBy, page, pageSize)
+  ) => this.getByKey(['p1'], filters, sortBy, page, pageSize)
 
   /**
-   * Retrieve a grouped list based on the 'controller' column with counts.
+   * Retrieve a grouped list based on the 'p2' column with counts.
    *
-   * This function retrieves a list of items from the database and groups them based on the 'microservice' column.
+   * This function retrieves a list of items from the database and groups them based on the 'p1' column.
    * It also provides a count of items in each group.
    *
    */
-  getControllers = (
+  getP2 = (
     filters: FindOptionsWhere<PermissionEntity>[] | FindOptionsWhere<PermissionEntity>,
     sortBy: FindOptionsOrder<PermissionEntity>,
     page = 0,
     pageSize = 20,
-  ) => this.getByKey(['microservice', 'controller'], filters, sortBy, page, pageSize)
+  ) => this.getByKey(['p1', 'p2'], filters, sortBy, page, pageSize)
 
   /**
-   * Retrieve a grouped list based on the 'Routers' column with counts.
+   * Retrieve a grouped list based on the 'p3' column with counts.
    *
-   * This function retrieves a list of items from the database and groups them based on the 'microservice' column.
+   * This function retrieves a list of items from the database and groups them based on the 'p1' column.
    * It also provides a count of items in each group.
    *
    */
-  getRouters = (
+  getP3 = (
     filters: FindOptionsWhere<PermissionEntity>[] | FindOptionsWhere<PermissionEntity>,
     sortBy: FindOptionsOrder<PermissionEntity>,
     page = 0,
     pageSize = 20,
-  ) => this.getByKey(['microservice', 'controller', 'router'], filters, sortBy, page, pageSize)
+  ) => this.getByKey(['p1', 'p2', 'p3'], filters, sortBy, page, pageSize)
 
   /**
-   * Retrieve a grouped list based on the 'Method' column with counts.
+   * Retrieve a grouped list based on the 'p4' column with counts.
    *
-   * This function retrieves a list of items from the database and groups them based on the 'microservice' column.
+   * This function retrieves a list of items from the database and groups them based on the 'p1' column.
    * It also provides a count of items in each group.
    *
    */
-  getMethods = (
+  getP4 = (
     filters: FindOptionsWhere<PermissionEntity>[] | FindOptionsWhere<PermissionEntity>,
     sortBy: FindOptionsOrder<PermissionEntity>,
     page = 0,
     pageSize = 20,
-  ) => this.getByKey(['microservice', 'controller', 'router', 'method'], filters, sortBy, page, pageSize)
+  ) => this.getByKey(['p1', 'p2', 'p3', 'p4'], filters, sortBy, page, pageSize)
 }
