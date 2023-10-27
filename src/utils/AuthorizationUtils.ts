@@ -7,7 +7,7 @@ import { AuthorizationEntity } from '../entities/AuthorizationEntity'
  * @returns
  */
 export function AuthorizationEntityToString(auth: Partial<AuthorizationEntity>) {
-  return `${auth.microservice ?? '*'}:${auth.controller ?? '*'}:${auth.router ?? '*'}:${auth.method ?? '*'}`
+  return `${auth.p1 ?? '*'}:${auth.p2 ?? '*'}:${auth.p3 ?? '*'}:${auth.p4 ?? '*'}`
 }
 
 /**
@@ -27,10 +27,10 @@ export function StringToAuthorizationEntity(authString: string, userId: string =
 
   const obj: Partial<AuthorizationEntity> = {}
 
-  if (authStringSplit[0] !== '*') obj.microservice = authStringSplit[0]
-  if (authStringSplit[1] !== '*') obj.controller = authStringSplit[1]
-  if (authStringSplit[2] !== '*') obj.router = authStringSplit[2]
-  if (authStringSplit[3] !== '*') obj.method = authStringSplit[3]
+  if (authStringSplit[0] !== '*') obj.p1 = authStringSplit[0]
+  if (authStringSplit[1] !== '*') obj.p2 = authStringSplit[1]
+  if (authStringSplit[2] !== '*') obj.p3 = authStringSplit[2]
+  if (authStringSplit[3] !== '*') obj.p4 = authStringSplit[3]
   if (userId) obj.userId = userId
 
   return obj

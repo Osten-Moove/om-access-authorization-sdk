@@ -53,16 +53,16 @@ export async function synchronizedAuthorizations(
     policies.forEach((policy) => {
       const { id, resource, permissions: policyPermissions } = policy
       policyPermissions.forEach((policyPermission) => {
-        const { microservice, controller, router, method } = policyPermission
+        const { p1, p2, p3, p4 } = policyPermission
         authorizationsWithOutUserId.push(
           db.getRepository(AuthorizationEntity).create({
             groupId,
             policyId: id,
             resource,
-            microservice,
-            controller,
-            router,
-            method,
+            p1,
+            p2,
+            p3,
+            p4,
           }),
         )
       })
@@ -89,10 +89,10 @@ export async function synchronizedAuthorizations(
           itt.groupId === it.groupId &&
           itt.userId === it.userId &&
           itt.policyId === it.policyId &&
-          itt.microservice === it.microservice &&
-          itt.controller === it.controller &&
-          itt.router === it.router &&
-          itt.method === it.method,
+          itt.p1 === it.p1 &&
+          itt.p2 === it.p2 &&
+          itt.p3 === it.p3 &&
+          itt.p4 === it.p4,
       ),
     )
     resultFinish.onlyInA.push(...result.onlyInA)

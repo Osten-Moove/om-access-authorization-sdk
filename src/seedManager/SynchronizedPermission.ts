@@ -35,10 +35,10 @@ export async function synchronizedPermission(
   const result = compareArrays(permissionEntities, backupEntities, (it, c) =>
     c.some(
       (cIt) =>
-        cIt.controller === it.controller &&
-        cIt.microservice === it.microservice &&
-        cIt.router === it.router &&
-        cIt.method === it.method,
+        cIt.p2 === it.p2 &&
+        cIt.p1 === it.p1 &&
+        cIt.p3 === it.p3 &&
+        cIt.p4 === it.p4,
     ),
   )
   LoggerDetails('Permissions', permissionEntities.length, backupEntities.length, result)

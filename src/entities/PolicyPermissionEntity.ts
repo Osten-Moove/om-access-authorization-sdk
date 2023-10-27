@@ -7,17 +7,17 @@ export class PolicyPermissionEntity {
   @PrimaryColumn({ type: 'character varying', name: 'policy_id' })
   policyId: string
 
-  @PrimaryColumn({ type: 'character varying', name: 'microservice' })
-  microservice: string
+  @PrimaryColumn({ type: 'character varying', name: 'p1' })
+  p1: string
 
-  @PrimaryColumn({ type: 'character varying', name: 'controller' })
-  controller: string
+  @PrimaryColumn({ type: 'character varying', name: 'p2' })
+  p2: string
 
-  @PrimaryColumn({ type: 'character varying', name: 'router' })
-  router: string
+  @PrimaryColumn({ type: 'character varying', name: 'p3' })
+  p3: string
 
-  @PrimaryColumn({ type: 'character varying', name: 'method' })
-  method: 'get' | 'post' | 'put' | 'delete' | 'patch' | 'all' | 'options' | 'head' | string
+  @PrimaryColumn({ type: 'character varying', name: 'p4' })
+  p4: string
 
   @ManyToOne(() => PolicyEntity)
   @JoinColumn({ name: 'policy_id' })
@@ -25,10 +25,10 @@ export class PolicyPermissionEntity {
 
   @ManyToOne(() => PermissionEntity)
   @JoinColumn([
-    { name: 'microservice', referencedColumnName: 'microservice' },
-    { name: 'controller', referencedColumnName: 'controller' },
-    { name: 'router', referencedColumnName: 'router' },
-    { name: 'method', referencedColumnName: 'method' },
+    { name: 'p1', referencedColumnName: 'p1' },
+    { name: 'p2', referencedColumnName: 'p2' },
+    { name: 'p3', referencedColumnName: 'p3' },
+    { name: 'p4', referencedColumnName: 'p4' },
   ])
   permission?: PermissionEntity
 }

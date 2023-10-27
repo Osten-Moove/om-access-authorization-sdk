@@ -1,8 +1,8 @@
 export type Permission = {
-  microservice: string
-  controller: string
-  router: string
-  method: string
+  p1: string
+  p2: string
+  p3: string
+  p4: string
 }
 
 export type Policy = {

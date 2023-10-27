@@ -4,17 +4,17 @@ import { PolicyPermissionEntity } from './PolicyPermissionEntity'
 
 @Entity({ name: 'permissions' })
 export class PermissionEntity {
-  @PrimaryColumn({ type: 'character varying', name: 'microservice' })
-  microservice: string
+  @PrimaryColumn({ type: 'character varying', name: 'p1' })
+  p1: string
 
-  @PrimaryColumn({ type: 'character varying', name: 'controller' })
-  controller: string
+  @PrimaryColumn({ type: 'character varying', name: 'p2' })
+  p2: string
 
-  @PrimaryColumn({ type: 'character varying', name: 'router' })
-  router: string
+  @PrimaryColumn({ type: 'character varying', name: 'p3' })
+  p3: string
 
-  @PrimaryColumn({ type: 'character varying', name: 'method' })
-  method: 'get' | 'post' | 'put' | 'delete' | 'patch' | 'all' | 'options' | 'head' | string
+  @PrimaryColumn({ type: 'character varying', name: 'p4' })
+  p4: string
 
   @OneToMany(() => PolicyPermissionEntity, (policyPermissionEntity) => policyPermissionEntity.permission)
   policies?: Array<PolicyPermissionEntity>
@@ -27,10 +27,10 @@ export class PermissionEntity {
 
     const obj = new PermissionEntity()
 
-    if (authStringSplit[0] !== '*') obj.microservice = authStringSplit[0]
-    if (authStringSplit[1] !== '*') obj.controller = authStringSplit[1]
-    if (authStringSplit[2] !== '*') obj.router = authStringSplit[2]
-    if (authStringSplit[3] !== '*') obj.method = authStringSplit[3]
+    if (authStringSplit[0] !== '*') obj.p1 = authStringSplit[0]
+    if (authStringSplit[1] !== '*') obj.p2 = authStringSplit[1]
+    if (authStringSplit[2] !== '*') obj.p3 = authStringSplit[2]
+    if (authStringSplit[3] !== '*') obj.p4 = authStringSplit[3]
     return obj
   }
 }
