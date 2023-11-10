@@ -22,7 +22,9 @@ export class AuthorizationGuard implements CanActivate {
       context.getClass(),
     ])
 
-    if (!permissions || permissions.length === 0) {
+    if (!permissions) return true
+
+    if (permissions.length === 0) {
       console.error(
         "ERROR: Permissions must be declared - You don't declared any permission from this route. Use @Authorization() decorator.",
       )
