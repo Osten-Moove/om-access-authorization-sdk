@@ -28,7 +28,7 @@ export class PermissionEntity {
     const obj = new PermissionEntity()
 
     if (authStringSplit[0] !== '*') obj.p1 = authStringSplit[0]
-    if (authStringSplit[1] !== '*') obj.p2 = authStringSplit[1]
+    obj.p2 = authStringSplit[1]
     if (authStringSplit[2] !== '*') obj.p3 = authStringSplit[2]
     if (authStringSplit[3] !== '*') obj.p4 = authStringSplit[3]
     return obj
