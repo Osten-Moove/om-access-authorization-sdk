@@ -5,6 +5,8 @@ export { AuthorizationLibDefaultOwner } from './helpers/AuthorizationLibVariable
 export { AuthorizationModule } from './module/AuthorizationModule'
 export { SeedRun } from './seedManager'
 export { AuthorizationManagerService } from './services/AuthorizationManagerService'
+export { PolicyService } from './services/PolicyService'
+export { GroupService } from './services/GroupService'
 export { AuthorizationService } from './services/AuthorizationService'
 export { ControlService } from './services/ControlService'
 export { AuthorizationEntityToString, StringToAuthorizationEntity } from './utils/AuthorizationUtils'
