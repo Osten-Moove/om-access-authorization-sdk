@@ -1,6 +1,7 @@
 export { Authorization } from './decorators/Authorization'
 export * from './entities'
 export * as Entities from './entities'
+export * as servicesTypes from './types/servicesTypes'
 export { AuthorizationLibDefaultOwner } from './helpers/AuthorizationLibVariables'
 export { AuthorizationModule } from './module/AuthorizationModule'
 export { SeedRun } from './seedManager'
